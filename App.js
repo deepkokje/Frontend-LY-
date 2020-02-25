@@ -10,8 +10,9 @@ import General from './Pages/General';
 import Home from './Pages/Home';
 import Political from './Pages/Political';
 import Sports from './Pages/Sports';
+import TabHelper from './Pages/Tabs/TabHelper'
 // import Tech from './Pages/Tech';
-
+ 
 class NavigationDrawerStructure extends Component {
   //Structure for the navigatin Drawer
   toggleDrawer = () => {
@@ -35,7 +36,7 @@ class NavigationDrawerStructure extends Component {
 
 const FirstActivity_StackNavigator = createStackNavigator({
   First:{
-    screen:Home,
+    screen:TabHelper,
     navigationOptions:({navigation})=>({
       title:'   HOME   ',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
@@ -103,19 +104,6 @@ const Screen3_StackNavigator = createStackNavigator({
    }
  });
  
-//  const Screen6_StackNavigator =createStackNavigator({
-//  Sixth:{
-//      screen:Tech,
-//      navigationOptions:({navigation})=>({
-//        title:'  Tech   ',
-//        headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
-//        headerStyle: {
-//          backgroundColor: '#FF9800',
-//        },
-//        headerTintColor: '#fff',
-//      })
-//    }
-//  });
 
 
 const DrawerNavigator = createDrawerNavigator({
@@ -163,6 +151,6 @@ const DrawerNavigator = createDrawerNavigator({
   // },
 
 });
-
+  
 
 export default createAppContainer(DrawerNavigator);
