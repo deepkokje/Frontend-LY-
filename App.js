@@ -3,6 +3,8 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 
 // import screens 
 import Business from './Pages/Businesss';
@@ -12,8 +14,11 @@ import Political from './Pages/Political';
 import Sports from './Pages/Sports';
 import TabHelper from './Pages/Tabs/TabHelper'
 // import Tech from './Pages/Tech';
- 
+
+
+
 class NavigationDrawerStructure extends Component {
+  
   //Structure for the navigatin Drawer
   toggleDrawer = () => {
     //Props to open/close the drawer
@@ -38,7 +43,7 @@ const FirstActivity_StackNavigator = createStackNavigator({
   First:{
     screen:TabHelper,
     navigationOptions:({navigation})=>({
-      title:'   HOME   ',
+      title:'   NewsApp   ',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: '#FF9800',
@@ -143,12 +148,7 @@ const DrawerNavigator = createDrawerNavigator({
     },
   },
 
-  // Tech:{
-  //   Screen:Screen6_StackNavigator,
-  //   navigationOptions:{
-  //     drawerLabel:'  Tech  '
-  //   },
-  // },
+
 
 });
   

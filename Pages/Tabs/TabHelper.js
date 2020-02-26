@@ -1,11 +1,6 @@
 import React from 'react';
-//import react in our code.
-import {
-  createAppContainer,
-} from 'react-navigation';
-import {createMaterialTopTabNavigator,
-    
-} from 'react-navigation-tabs';
+import {createAppContainer} from 'react-navigation';
+import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
   import Positive from './positives'
   import Negative from './negative'
@@ -21,16 +16,16 @@ import { createStackNavigator } from 'react-navigation-stack';
         swipeEnabled: true,
         animationEnabled: true,
         tabBarOptions: {
-          activeTintColor: '#FFFFFF',
-          inactiveTintColor: '#F8F8F8',
+          activeTintColor: ' #00FFFF ',
+          inactiveTintColor: '		#00FFFF',
           style: {
-            backgroundColor: '#FF9800',
+            backgroundColor: '#000068',
           },
           labelStyle: {
             textAlign: 'center',
           },
           indicatorStyle: {
-            borderBottomColor: '#87B56A',
+            borderBottomColor: '#87B56A',  //slider
             borderBottomWidth: 2,
           },
         },

@@ -8,7 +8,7 @@ import {DataItem} from './dataitem';
 
 export default class General extends Component{
   constructor(props){
-    super(props);
+    super(props)
     this.state ={ isLoading: true,
  
   }
