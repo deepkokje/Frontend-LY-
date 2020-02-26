@@ -10,10 +10,10 @@ import { Ionicons } from '@expo/vector-icons';
 import Business from './Pages/Businesss';
 import General from './Pages/General';
 import Home from './Pages/Home';
-import Political from './Pages/Political';
+import Technology from './Pages/Technology';
 import Sports from './Pages/Sports';
 import TabHelper from './Pages/Tabs/TabHelper'
-// import Tech from './Pages/Tech';
+
 
 
 
@@ -31,7 +31,7 @@ class NavigationDrawerStructure extends Component {
           {/*Donute Button Image */}
           <Image
             source={require('./image/drawer.png')}
-            style={{ width: 25, height: 25, marginLeft: 5 }}
+            style={{ width: 25, height: 30, marginLeft: 5 }}
           />
         </TouchableOpacity>
       </View>
@@ -46,9 +46,10 @@ const FirstActivity_StackNavigator = createStackNavigator({
       title:'   NewsApp   ',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#0D9A83',
       },
-      headerTintColor: '#fff',
+     
+      headerTintColor: '#fff'
     })
   }
 });
@@ -60,9 +61,10 @@ const Screen2_StackNavigator = createStackNavigator({
       title:'  General   ',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#0D9A83',
       },
       headerTintColor: '#fff',
+
     })
   }
 });
@@ -74,7 +76,7 @@ const Screen3_StackNavigator = createStackNavigator({
        title:'  Business   ',
        headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
        headerStyle: {
-         backgroundColor: '#FF9800',
+         backgroundColor: '#0D9A83',
        },
        headerTintColor: '#fff',
      })
@@ -83,12 +85,12 @@ const Screen3_StackNavigator = createStackNavigator({
 
  const Screen4_StackNavigator = createStackNavigator({
   Fourth:{
-     screen:Political,
+     screen: Technology,
      navigationOptions:({navigation})=>({
-       title:'  Political   ',
+       title:'  Technology   ',
        headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
        headerStyle: {
-         backgroundColor: '#FF9800',
+         backgroundColor: '#0D9A83',
        },
        headerTintColor: '#fff',
      })
@@ -102,7 +104,7 @@ const Screen3_StackNavigator = createStackNavigator({
        title:'  Sports   ',
        headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
        headerStyle: {
-         backgroundColor: '#FF9800',
+         backgroundColor: '#0D9A83',
        },
        headerTintColor: '#fff',
      })
@@ -134,10 +136,10 @@ const DrawerNavigator = createDrawerNavigator({
     },
   },
 
-  Political:{
+  Technology:{
     screen:Screen4_StackNavigator,
     navigationOptions:{
-      drawerLabel:'  Political  '
+      drawerLabel:'  Technology  '
     },
   },
 

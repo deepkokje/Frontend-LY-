@@ -2,11 +2,11 @@ import React , {Component} from 'react';
 import {StyleSheet,View,Text} from 'react-native';
 
 
-export default class Political extends Component{
+export default class Technology extends Component{
     render(){
         return(
         <View style ={styles.MainConatiner} >
-             <Text style={{ fontSize: 23 }}> Political Screen</Text>
+             <Text style={{ fontSize: 23 }}> Technology Screen</Text>
         </View>)
     }
 }

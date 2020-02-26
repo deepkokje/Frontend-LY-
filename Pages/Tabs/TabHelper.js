@@ -16,16 +16,16 @@ import { createStackNavigator } from 'react-navigation-stack';
         swipeEnabled: true,
         animationEnabled: true,
         tabBarOptions: {
-          activeTintColor: ' #00FFFF ',
+          activeTintColor: '#F4F5F3 ',
           inactiveTintColor: '		#00FFFF',
           style: {
-            backgroundColor: '#000068',
+            backgroundColor: '#55B8A7',
           },
           labelStyle: {
             textAlign: 'center',
           },
           indicatorStyle: {
-            borderBottomColor: '#87B56A',  //slider
+            borderBottomColor: '#FFFEFE ',  //slider
             borderBottomWidth: 2,
           },
         },
