@@ -8,11 +8,15 @@ import { Ionicons } from '@expo/vector-icons';
 
 // import screens 
 import Business from './Pages/Businesss';
-import General from './Pages/General';
+import Health from './Pages/Health';
 import Home from './Pages/Home';
 import Technology from './Pages/Technology';
 import Sports from './Pages/Sports';
+import Entertainment from './Pages/Entertainment'
+import Science from './Pages/Science'
 import TabHelper from './Pages/Tabs/TabHelper'
+import HealthTabHelper from './Pages/Tabs/TabHealth'
+
 
 
 
@@ -56,9 +60,9 @@ const FirstActivity_StackNavigator = createStackNavigator({
 
 const Screen2_StackNavigator = createStackNavigator({
  Second:{
-    screen:General,
+    screen:HealthTabHelper,
     navigationOptions:({navigation})=>({
-      title:'  General   ',
+      title:'  Health   ',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: '#0D9A83',
@@ -110,7 +114,35 @@ const Screen3_StackNavigator = createStackNavigator({
      })
    }
  });
- 
+
+ const Screen6_StackNavigator = createStackNavigator({
+  Sixth:{
+     screen:Entertainment,
+     navigationOptions:({navigation})=>({
+       title:'   Entertainment     ',
+       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+       headerStyle: {
+         backgroundColor: '#0D9A83',
+       },
+       headerTintColor: '#fff',
+     })
+   }
+ });
+
+
+ const Screen7_StackNavigator = createStackNavigator({
+  Seventh:{
+     screen:Science,
+     navigationOptions:({navigation})=>({
+       title:'   Science     ',
+       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+       headerStyle: {
+         backgroundColor: '#0D9A83',
+       },
+       headerTintColor: '#fff',
+     })
+   }
+ });
 
 
 const DrawerNavigator = createDrawerNavigator({
@@ -122,10 +154,10 @@ const DrawerNavigator = createDrawerNavigator({
     },
   } ,
 
-  General:{
+  Health:{
     screen:Screen2_StackNavigator,
     navigationOptions:{
-      drawerLabel:'  General  '
+      drawerLabel:'  Health  '
     },
   },
 
@@ -149,6 +181,22 @@ const DrawerNavigator = createDrawerNavigator({
       drawerLabel:'  Sports '
     },
   },
+
+  Entertainment:{
+    screen:Screen6_StackNavigator,
+    navigationOptions:{
+      drawerLabel:'  Entertainment  '
+    },
+  },
+
+  
+  Science:{
+    screen:Screen7_StackNavigator,
+    navigationOptions:{
+      drawerLabel:'  Science  '
+    },
+  },
+
 
 
 

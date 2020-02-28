@@ -7,7 +7,8 @@ import Expo from "expo";
 import DataItem from '../dataitem';
 import Time from '../Time'
 
-export default class General extends Component{
+
+export default class Positive extends Component{
   constructor(props) {
     super(props);
     this.state = { loading: true };
@@ -39,7 +40,7 @@ export default class General extends Component{
 
 
 render(){
-  console.log(this.state.dataSource)
+  // console.log(this.state.dataSource)
   if(this.state.isLoading){
     return(
       <View style={{flex: 1, padding: 20}}>
@@ -55,7 +56,8 @@ render(){
         dataArray ={this.state.dataSource}
         renderRow={(item)=>{
             return <DataItem dataSource ={item}/>
-        }}/>
+        }}
+        keyExtractor={(item, index) => index.toString()}/>
           
         
       </Content>
