@@ -49,8 +49,7 @@ class ModalComponent extends Component{
                             </Button>
                         </Right>
                     </Header>
-                    <Content contentContainerStyle={{height: webViewHeight}}>
-                      
+                    <Content contentContainerStyle={{flex: 1,height: webViewHeight}}> 
                       
                         <WebView source={{uri:url}} style={{flex: 1}}
                         onError={this.handleClose} startInLoadingState
