@@ -1,18 +1,38 @@
 import React,{Component} from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
+import { Container, Header, Content, List,View, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
 import {ActivityIndicator} from 'react-native';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import Expo from "expo";
 import DataItem from '../dataitem';
 import Time from '../Time'
+import Modal from '../modal'
 
 
 export default class Positive extends Component{
   constructor(props) {
     super(props);
-    this.state = { loading: true };
+    this.state = {    
+      isLoading: true,
+      data: null,
+      setModalVisible: false,
+      modalArticleData: {} };
   }
+
+  
+  handleItemDataOnPress = (articleData) => {
+    this.setState({
+      setModalVisible: true,
+      modalArticleData: articleData
+    });
+  }
+
+  handleModalClose = () => {
+    this.setState({
+      setModalVisible: false,
+      modalArticleData: {}
+    });
+  } 
 
   async componentDidMount() {
     await Expo.Font.loadAsync({
@@ -55,12 +75,17 @@ render(){
         <List
         dataArray ={this.state.dataSource}
         renderRow={(item)=>{
-            return <DataItem dataSource ={item}/>
+            return <DataItem onPress={this.handleItemDataOnPress} dataSource ={item}/>
         }}
         keyExtractor={(item, index) => index.toString()}/>
           
         
       </Content>
+      <Modal 
+          showModal={this.state.setModalVisible}
+          articleData={this.state.modalArticleData}
+          onClose={this.handleModalClose}
+        />
     </Container>
   )
 }

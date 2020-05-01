@@ -8,7 +8,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
   const HealthTabScreen = createMaterialTopTabNavigator(
     {
-        Positive: { screen: HealthPositive },
+      Positive: { screen: HealthPositive },
        Negative: { screen:  HealthNegative},
       },
       {

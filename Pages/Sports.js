@@ -5,6 +5,7 @@ import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import DataItem from './dataitem';
 import Time from './Time'
+import Modal  from './modal'
 
 
 
@@ -12,9 +13,27 @@ import Time from './Time'
 export default class Sports extends Component{
   constructor(props){
     super(props)
-    this.state ={ isLoading: true,
+    this.state ={ 
+      isLoading: true,
+      dataSource:null,
+      setModalvisible:false,
+      modalArticleData:{}
  
   }
+  }
+
+  handleItemDataOnPress = (articleData) => {
+    this.setState({
+      setModalVisible: true,
+      modalArticleData: articleData
+    });
+  }
+
+  handleModalClose = () => {
+    this.setState({
+      setModalVisible: false,
+      modalArticleData: {}
+    });
   }
 
   async componentDidMount(){
@@ -50,13 +69,17 @@ export default class Sports extends Component{
           <List
           dataArray ={this.state.dataSource}
           renderRow={(item)=>{
-              return <DataItem dataSource ={item}/>
+              return <DataItem onPress={this.handleItemDataOnPress} dataSource ={item}/>
           }}
           keyExtractor={(item, index) => index.toString()}
           />
-          
-          
-      </Content>
+        </Content>
+        <Modal 
+          showModal={this.state.setModalVisible}
+          articleData={this.state.modalArticleData}
+          onClose={this.handleModalClose}
+        />
+
       </Container>
   )
   }

@@ -177,6 +177,7 @@ const DrawerNavigator = createDrawerNavigator({
 
   Sports:{
     screen:Screen5_StackNavigator,
+    
     navigationOptions:{
       drawerLabel:'  Sports '
     },

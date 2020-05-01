@@ -4,6 +4,7 @@ import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
   import Positive from './positives'
   import Negative from './negative'
+  
 
   const TabScreen = createMaterialTopTabNavigator(
     {

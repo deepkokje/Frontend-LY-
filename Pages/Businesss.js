@@ -1,10 +1,13 @@
 import React , {Component} from 'react';
-import {StyleSheet,View,Text,ActivityIndicator} from 'react-native';
+import {StyleSheet,View,Text,ActivityIndicator,Share} from 'react-native';
 import * as Font from 'expo-font';
 import { Container, Header, Content, List, ListItem, Thumbnail,Left, Body, Right, Button } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 import DataItem from './dataitem';
 import Time from './Time'
+import Modal from './modal'
+
+
 
 
 
@@ -12,9 +15,26 @@ import Time from './Time'
 export default class Business extends Component{
   constructor(props){
     super(props)
-    this.state ={ isLoading: true,
- 
+    this.state ={ 
+      isLoading: true,
+      dataSource:null,
+      setModalvisible:false,
+      modalArticleData:{}
+      }
   }
+
+  handleItemDataOnPress = (articleData) => {
+    this.setState({
+      setModalVisible: true,
+      modalArticleData: articleData
+    });
+  }
+
+  handleModalClose = () => {
+    this.setState({
+      setModalVisible: false,
+      modalArticleData: {}
+    });
   }
 
   async componentDidMount(){
@@ -50,13 +70,18 @@ export default class Business extends Component{
           <List
           dataArray ={this.state.dataSource}
           renderRow={(item)=>{
-              return <DataItem dataSource ={item}/>
+              return <DataItem onPress={this.handleItemDataOnPress} dataSource ={item}/>
           }}
           keyExtractor={(item, index) => index.toString()}
           />
           
           
       </Content>
+      <Modal 
+          showModal={this.state.setModalVisible}
+          articleData={this.state.modalArticleData}
+          onClose={this.handleModalClose}
+        />
       </Container>
   )
   }

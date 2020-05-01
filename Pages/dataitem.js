@@ -4,11 +4,17 @@ import Time from './Time'
 
 
 
+
 export default class DataItem extends Component {
 
     constructor(props) {
         super(props);
         this.dataSource = props.dataSource;
+    }
+
+    handlePress = () => {
+      const {url, title} = this.dataSource;
+      this.props.onPress({url, title});
     }
     render(){
         return(
@@ -26,7 +32,7 @@ export default class DataItem extends Component {
                     </View>
             </Body>
             <Right>
-              <Button transparent>
+              <Button transparent onPress={this.handlePress}>
                 <Text>View</Text>
               </Button>
             </Right>
